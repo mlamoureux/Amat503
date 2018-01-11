@@ -1,0 +1,119 @@
+ 
+ \documentclass[12pt]{article}
+ 
+ \usepackage{amssymb}
+
+\setlength{\textheight}{10in}
+\setlength{\topmargin}{-1in}
+\setlength{\textwidth}{7in}
+\setlength{\oddsidemargin}{-.5in}
+\setlength{\evensidemargin}{-.5in}
+
+\newcommand{\real}{\mathbb{R}}
+\newcommand{\rat}{\mathbf{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbf{Q}}
+
+ 
+ \begin{document}
+\pagestyle{empty}
+
+
+%\Large
+
+\begin{center}
+{\bf FINAL PROJECT  }
+
+{\bf AMAT 503 -- Winter 2018 } 
+
+
+\end{center}
+
+\vskip 5mm
+
+\section{Form}
+
+The goal of the final project is to create a written report, poster, display, or other physical document, that presents some new (new to you) ideas on wavelets, either on the theory or the application to a real problem.
+
+The precise form of your report or other deliverable is up to you. However, it must look professional and suitable for display or distribution to other people. Imagine that this is something your boss asked you to do for work, and it would be on public display -- so make it look good!
+
+REPORT: A typical report would be a ten to fifteen page document with text, diagrams, figures, and/or commented computer code. It should have an introduction, body, examples (or demonstrations), and a summary (or conclusion). It should include references (just a few is fine).
+
+POSTER: Go look at the posters in the Biological Sciences building, where there are many examples of good (and not so good) posters that explain certain research results. Like a written report, the poster should contain some introductory text, a body of text, examples and demos, and a summary. As well as figures and references. Note that posters can be printed on campus, or at Staples -- however, this printing is not cheap.
+
+TIMELINE: also around campus you sometimes see timelines -- of the geological processes in the earth, or a history of prominent researchers, or the history of a type of research. There is an example of a ``wavelet timeline" in the hallway across from my office (MS514).  A new timeline on the history of wavelets, or foundations of wavelets, or emerging new applications for wavelets, would be a suitable project.
+
+SOFTWARE: You might like to produce some software that does something interesting with wavelets. An acceptable form would be commented source code, with sample test code, and a writeup that explains the functionality of the code. A real demo in class would be great. It should be in the form that can be used by a knowledgeable person. 
+
+EXPERIMENT OR ANALYSIS OF DATA: You might want to collect some signal data (sounds, images, moving images) and extract some data or information from the data using wavelets. For instance, as ``Where's Waldo'' project, where you try to find particular faces or figures within photos of many people. Analysis the sound of a machine that is working, and one that is damaged (e.g. a car engine that is working well, compared to one that has a bad cylinder). The idea here is to use wavelets in an essential way to analysis some real data.
+
+\section{Content}
+
+The choice of content is up to you. It must involve wavelets, it should contain material that is new to you (not covered in the course in depth), it may focus on theory or on applications. It could contain the results of computer experiments you have done, it could be a survey of results that are out there in the literature, it could be a writeup of some theoretical ideas that you find interesting.
+
+Keep in mind, it is not acceptable to pull together a bunch of summary information from Wikipeida or other such  compiled sources. You should be looking at original journal articles, books, or creating your own, new source material.
+
+\subsection{Computer Labs in the text}
+The textbook has a number of ``Computer Labs'' that describe some weel-defined projects, which are suitable for a final exam. For instance:
+\begin{itemize}
+\item p.\ 221. 6.9 -- 6.13. Various experiments with the Haar wavelet.
+\item p. 280. 7.8, 7.9. Experiments with the Daubechies wavelet.
+\item p.\ 316. 8.1, 8.2, 8.3. Coifflets. 
+\item 9.1 thru 9.9.9. Wavelet shrinkage. 
+\item 10., 10.2 , 11.1 thru 11.8. Biorthogonal wavelets.
+\end{itemize}
+This is not a complete list. Some of the items might be a bit short for a project.  
+
+\subsection{Theoretical work}
+1. Multiresolution analysis, mother wavelets, father wavelets, all are a part of the mathematical foundation of wavelets on the real line. We don't cover this in class, but it is deeply interesting mathematics. (We skip it as we jumped immediately to discrete signals.) Could be an interesting project to summarize some of the results here.
+
+2. Curvelets -- a different approach to 2D wavelets. See the work of Donoho et al at Stanford
+
+3. Continuous wavelet transforms -- removes the discrete aspects of the wavelet transforms (continuous choice of both position and scale). 
+
+
+\subsection{Experiments}
+Here is a sample experiment: test different wavelet transforms for compression.
+\begin{itemize}
+\item obtain some typical signal -- eg a voice recording, say from an audio book.
+\item apply a variety of wavelet transforms (try Haar, Daubechies, Morlet, etc. Try different levels of iterations.)
+\item for each version, compute the cumulative energy. Compute how many coefficients are needed to preserve 99\% (say) of the energy.
+\item which type of wavelet works best? How many iterations?
+\item repeat this experiment, with another voice recording. (Say, a different audio book.) Are the results similar?
+\item perhaps you can automate this, and try it with a dozen sample signals. 
+\item repeat with a very different signal. Say a rock music recording. Or many recordings. 
+\item repeat with another very different signal. Say a electrocardiogram recording. Or many recordings. 
+\item are the results similar, different, across different signal sources? Across similar signal sources?
+\end{itemize}
+The final report would summarize the experiment and the results, presenting the material in a well-organized manner.
+
+A different experiment (for a different project) might try something like the above, using 2D images.
+
+\subsection{Others}
+You can propose any topic you like. Deadline for submission of a project outline is March 27
+
+\section{Examples}
+In previous iterations of this course, students have turned in projects including the following:
+\begin{itemize}
+\item a computer demo using wavelets to render graphics (mainly landscapes), with wavelets as an adjustable means for compression and speed of drawing;
+\item continuous wavelets as a means of estimating physical parameters in complex objects (in this case, the fractal coefficient for a rock sample);
+\item use of wavelets in modelling electromagnetic waves;
+\item a poster display of the use of wavelets in analytical chemistry;
+\item a poster display of a timeline of the history of wavelets;
+\item a project using wavelets for non-stationary filtering of audio signals;
+\item an analysis of bird sound recordings and at tool to classify species;
+\item and many other.
+\end{itemize}
+
+\section{Deadlines}
+March 15 -- submission of project outline. (1/2 a page to a page is sufficient.)
+
+\noindent
+April 12 -- submission of completed project.
+
+\section{Group work}
+The project may be done in groups of 1 to 3 people.
+
+
+\end{document}
+
