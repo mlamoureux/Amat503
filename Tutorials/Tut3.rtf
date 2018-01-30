@@ -1,0 +1,111 @@
+{\rtf1\ansi\ansicpg1252\cocoartf949\cocoasubrtf540
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+\margl1440\margr1440\vieww12060\viewh12920\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ql\qnatural\pardirnatural
+
+\f0\fs22 \cf0 AMAT 503 - Tutorial 3 - February 5, 2010. \
+Sound, Images, and the Discrete Wavelet Package.\
+\
+Three projects today, on sound, images, Haar wavelets.\
+\
+SOUND:\
+>> % High quality sound\
+>> Fs = 44100; % Sampling rate of 44.1 kHz, CD quality\
+>> dt = 1/Fs; % step size\
+>> T = 0:dt:1; % one second of sound, at high sample rate\
+>> HiNote3 = sin(2*pi*3000*T); % the 3kHz high note, new sample rate\
+>> sound(HiNote3, Fs)\
+>> HiNote5 = sin(2*pi*5000*T); % the 5kHz high note, new sample rate\
+>> sound(HiNote5, Fs) % This should actually sound higher now\
+>> % Try out different frequencies. How high can you hear?\
+>> sound(.7*sin(2*pi*10000*T),Fs)  % 10 kHz\
+>> sound(.7*sin(2*pi*12000*T),Fs)  % 12 kHz\
+>> sound(.7*sin(2*pi*14000*T),Fs)  % 14 kHz, old men like me can barely hear this\
+>> sound(.7*sin(2*pi*16000*T),Fs)  % 16 kHz, maybe the young women can hear this\
+>> sound(.7*sin(2*pi*18000*T),Fs)  % 18 kHz, young children can hear this\
+>> sound(.7*sin(2*pi*20000*T),Fs)  % 20 kHz, unlikely the computer speakers can even play this.\
+>> sound(.7*sin(2*pi*60*T),Fs) % 60 Hz, typical power line noise\
+>> sound(.7*sin(2*pi*30*T),Fs) % 30 Hz, tough to hear\
+>> sound(.7*sin(2*pi*20*T),Fs) % 20 Hz, need good speakers, good computer, to generate this\
+\
+>> % Some short piano notes and a melody\
+>> Fs = 44100;\
+>> dt = 1/Fs;\
+>> T0 = 0:dt:.25; % a quarter of a second\
+>> C = sin(2*pi*261.6*T0); % C on the piano\
+>> D = sin(2*pi*293.7*T0); % D on the piano\
+>> E = sin(2*pi*329.7*T0); % E on the piano\
+>> F = sin(2*pi*349.2*T0); % F on the piano\
+>> G = sin(2*pi*391.9*T0); % G on the piano\
+>> sound([E,D,C,D,E,E,E],Fs); % Mary had a little lamb...\
+\
+% Project. Write your own melody.\
+% Project: Try other periodic functions, beside sine.\
+% Project: can you make a square wave? A sawtooth wave? What do they sound like?\
+% Plot the FFT of your sounds. Can you make sense of the info in the FFT? Frequency content?\
+% Where does MATLAB clip soundwaves? (i.e. does 10*sin() sound bad compared to .5*sin()?)\
+\
+IMAGES\
+% Images - explore the image commands in MATLAB. \
+% Project - take a color image, separate out the Red, Green, Blue channels\
+% Project - take a greyscale image, invert it.\
+% Project - take a greyscale image, write your own gamma adjustment. Apply different gamma.\
+% Project - take a greyscale image, use block matrices to crop out a select block in the image.\
+\
+\
+DISCRETE WAVELETS:\
+\
+The goal here is to download the MATLAB code for the textbook, install it onto your system, and begin using the code.\
+\
+Step one:\
+In your browser, go to http://www.stthomas.edu/wavelets\
+Click around to find the SOFTWARE, and download the\
+DISCRETE WAVELETS PACKAGE, for MATLAB.\
+Save the unzipped files somewhere useful on your drive.\
+\
+Step two:\
+Follow the INSTALLATION INSTRUCTIONS on the download page, to get this installed in MATLAB.\
+\
+Step three:\
+Follow the KNOWN ISSUES page.\
+In particular, you must download a separate file called MyFiles.zip, and unpack it into the same directory as the others.\
+\
+Do the rehash and startup in MATLAB.\
+\
+Step four:\
+Read the Help files for the DiscreteWavelet Toolbox, within MATLAB. See what you can learn on your own.\
+\
+Example.\
+Gee. What is a Haar wavelet transform? How do I compute it?\
+v = 1:32  % A simple waveform\
+h = Haar() % filter coefficients for a Haar wavelet\
+wt = WT1D1(v,h) % the wavelet transform\
+y = IWT1D1(wt,h) % the inverse transform\
+abs(y'-v) % compare the original and reconstructed waveforms\
+plot(1:32, v, 1:32, wt)  % plot the thing\
+plot(1:32, v,'x', 1:32, wt,'.') % plot with pretty symbols. Look at the last half. Interesting!\
+\
+Example:\
+How do I repeat this transform? How many times can I repeat it?\
+v = 1:32  % A simple waveform\
+h = Haar() % filter coefficients for a Haar wavelet\
+wt = WT1D(v,h,3) % the wavelet transform, repeated 3 times\
+plot(wt,',') % Look at the thing. Notice the patterns. \
+\
+\
+Try this with Daubechies wavelets, or Coifman. (Whatever those are.)\
+\
+\
+Example:\
+Working with a sound:\
+snd=AudioNames(); %Get all audio files included with the toolbox\
+v=wavread(snd\{2\}); %Read an audio file\
+v=ChopVector(v,4); %Make sure the length is divisible by 16\
+plot(v); %Plot the vector\
+wt=WT1D(v,Daub(6),4); %Compute four iterations of the transformation\
+WaveletVectorPlot(wt,4,'Title','Four Iterations Using Daub(6)'); % a pretty plot\
+\
+Examples:\
+Read the image demos, try the wavelets with that.\
+}

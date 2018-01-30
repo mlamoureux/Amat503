@@ -1,0 +1,56 @@
+{\rtf1\ansi\ansicpg1252\cocoartf949\cocoasubrtf540
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+\margl1440\margr1440\vieww16940\viewh15720\viewkind1
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ql\qnatural\pardirnatural
+
+\f0\fs22 \cf0 \
+AMAT 503 - Tutorial 6 - March 19, 2010. \
+\
+Basic image processing\
+\
+Today, we want to try out some very simple image processing routines. Filtering and FFTs.\
+\
+First, you need to learn how to display 2D arrays as images. Look at the commands\
+-- image()\
+-- imagesc()\
+\
+Next, you should make some simple images, almost cartoon draws, to practice the data processing with.\
+\
+Try making a 256x256 array of numbers that draw out as\
+-- a simple line\
+-- several lines, at different slops\
+-- a circle (hollow)\
+-- a disk (a filled in circle)\
+-- several circles and disks, of several sizes.\
+\
+Now, try implementing some simple filters.\
+Smoother\
+ -- h=(1/9)*[1 1 1 ; 1 1 1 ; 1 1 1]\
+-- y = conv2(h,x)  -- this does a two dimensional convolution of filter h with image x\
+-- then look at image y, compare it to image x. \
+-- do this for several different images\
+\
+Edge detector\
+-- use h = [-1 0 -1; 0 2 0; -1 0 -1]\
+-- convolve with one image, look at the new image. (What do you do about negative values?)\
+-- check, it is picking out edges?\
+\
+-- try other values for h. Like the Gaussian, for instance, of various width.\
+\
+Can you figure out how to do a median filter?\
+\
+Try adding some random noise to your image. Can you filter it out, say with a smoothing filter? Use noise of different amplitudes, see how much noice you can inject and still see the original image.\
+\
+Fourier transforms\
+\
+y = fft2(x)   gives the 2D fourier transform of image x.\
+imagesc(abs(y)) will plot the absolute value of the fourier transform.\
+\
+What does the fourier transform of a line look like? Of a circle? Of a combination of lines? Of circles? Of lines and circles?\
+\
+Can you see any changes to the fft of an image, if you smooth the image first? Edge detect it first?\
+\
+Can you create a filter in the FFT domain, as we discussed in class?\
+\
+}
