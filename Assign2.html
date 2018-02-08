@@ -11810,7 +11810,7 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Q4.">Q4.<a class="anchor-link" href="#Q4.">&#182;</a></h2><p>Let $v = [2, 6, −4, 2, 400, 402, −8, −6]'$ and use the Haar transform (Algorithm 6.1 in the text, or use the 8x8 matrix from class) to compute the HWT of v. There is a large jump in the values of v from v4 to v5 and from v6 to v7. Is this reflected in the difference block of the transformed data?</p>
+<h2 id="Q4.">Q4.<a class="anchor-link" href="#Q4.">&#182;</a></h2><p>Let $v = [2,6,-4,2,400,402,-8,-6]'$  and use the Haar transform (Algorithm 6.1 in the text, or use the 8x8 matrix from class) to compute the HWT of v. There is a large jump in the values of v from v4 to v5 and from v6 to v7. Is this reflected in the difference block of the transformed data?</p>
 
 </div>
 </div>
@@ -11849,7 +11849,7 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Q7.">Q7.<a class="anchor-link" href="#Q7.">&#182;</a></h2><p>Compute by hand three iterations of the inverse HWT on the vector y from Question No. 8 above. Show your work at each stage.</p>
+<h2 id="Q7.">Q7.<a class="anchor-link" href="#Q7.">&#182;</a></h2><p>Compute by hand three iterations of the inverse HWT on the vector y from Question No. 6 above. Show your work at each stage.</p>
 <p>Verify that your result is the original vector $v$ from Question 6, showing this was an inverse.</p>
 
 </div>
@@ -11861,9 +11861,9 @@ div#notebook {
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Q8.">Q8.<a class="anchor-link" href="#Q8.">&#182;</a></h2><p>The $Z$ transform for the Haar filters are $H(Z) = (1+Z)/2, G(Z) = (1-Z)/2$ which have roots at $-1, +1$ respectively.</p>
-<p>Find the roots for the $Z$ transform of the Daubechies 6 filters, lowpass $H(Z) = h_0 + h_1 Z+ h_2Z + \cdots h_5Z^5$ and highpass $G(Z) = g_0 + g_1 Z+ g_2Z + \cdots g_5Z^5$. You likely will have to do this numerically.</p>
+<p>Find the roots for the $Z$ transform of the Daubechies filters with 6 non-zero coefficents, lowpass $H(Z) = h_0 + h_1 Z+ h_2Z + \cdots h_5Z^5$ and highpass $G(Z) = g_0 + g_1 Z+ g_2Z + \cdots g_5Z^5$. You likely will have to do this numerically. (In Python wavetlet package, the Daubechies filter with 6 coeffcients is called db3.)</p>
 <p>Can you see any relationship between those roots?</p>
-<p>Verify your answer by checking with Daubechies 8.</p>
+<p>Verify your answer by checking with the Daubechies filter with 8 coefficients. (In Python wavelets, this is called db4.)</p>
 
 </div>
 </div>
@@ -11879,7 +11879,7 @@ $$ G(Z) = g_0 + g_1 Z+ g_2Z + \cdots g_nZ^n,$$
 find a relationship between their roots, under the assumption that the coefficients of $G$ are the same as $H$, except in reverse order. That is,
 $$ g_k = h_{n-k}, \mbox{ for $0 \leq k \leq n$}.$$</p>
 <p>b) Same question, except assume the coefficients of $G$ also have alternating signs from $H$:
-$$ g_k = (-1)^k h_{n-k}, \mbox{ for $0 \leq k \leq n$}.$$</p>
+$$ g_k = (-1)^k h_{n-k}, \mbox{ for } 0 \leq k \leq n.$$</p>
 
 </div>
 </div>
